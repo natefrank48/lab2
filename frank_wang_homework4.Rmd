@@ -1,0 +1,21 @@
+---
+title: "frank_wang_homework4"
+author: "Nathan Frank"
+date: "2/21/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Team members: Yen Wang, Nathan Frank
+
+link to github repo: https://github.com/natefrank48/lab2
+
+What is the overall number of chocolate bars rated? How does the number of ratings depend on the year? Draw a bar chart of the number of reports.
+```{r}
+choco = read.csv("choco.csv")
+print(nrow(choco))
+```
+
