@@ -17,5 +17,9 @@ What is the overall number of chocolate bars rated? How does the number of ratin
 ```{r}
 choco = read.csv("choco.csv")
 print(nrow(choco))
+str(choco)
 ```
-
+```{r}
+library(tidyverse)
+ggplot(data = choco, aes(x = Review.Date)) + geom_bar()
+```
