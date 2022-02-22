@@ -1,12 +1,14 @@
 ---
 title: "frank_wang_homework4"
-author: "Nathan Frank"
+author: "Nathan Frank and Yen Wang"
 date: "2/21/2022"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
 ```
 
 ## Team members: Yen Wang, Nathan Frank
@@ -17,9 +19,10 @@ What is the overall number of chocolate bars rated? How does the number of ratin
 ```{r}
 choco = read.csv("choco.csv")
 print(nrow(choco))
-str(choco)
 ```
 ```{r}
-library(tidyverse)
-ggplot(data = choco, aes(x = Review.Date)) + geom_bar()
+ggplot(data = choco, aes(x = Review.Date)) + geom_bar() + 
+  xlab("Year") + 
+  ylab("Number of Ratings") + 
+  ggtitle("Number of Ratings Each Year")
 ```
