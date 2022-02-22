@@ -43,9 +43,10 @@ ggplot(data = choco, aes(x = Rating, y = Cocoa.Pct)) +
   geom_point() + 
   ggtitle("Cocoa Percentage vs Rating")
 ```
+
 From the scatter plot above, we can conclude that the ratings do not depend on the coca percentage of a chocolate bar. Since the cocoa percentage of most chocolate is between 60 and 85 and the outliers' ratings are also in that range. 
 
-
-
+# Work distrubution:
+Since Question set I was discussed in class already, we decided to split the rest of the problems, where we each do two. I will be doing the first two problems from question set ii and Nathan will do the third problem and wrote his own question.
 
 
