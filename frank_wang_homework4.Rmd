@@ -8,7 +8,6 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
-
 ```
 
 ## Team members: Yen Wang, Nathan Frank
@@ -46,7 +45,26 @@ ggplot(data = choco, aes(x = Rating, y = Cocoa.Pct)) +
 
 From the scatter plot above, we can conclude that the ratings do not depend on the coca percentage of a chocolate bar. Since the cocoa percentage of most chocolate is between 60 and 85 and the outliers' ratings are also in that range. 
 
+### How do ratings compare across different company locations?
+```{r}
+choco2 = dplyr::filter(choco, Company.Location %in% c("U.S.A.", "France", "Canada"))
+ggplot(data = choco2, aes(x=Rating)) + geom_boxplot() + facet_wrap(~Company.Location)
+```
+The box plots show that the median value of all 3 locations is almost exactly 3.25.Canada has a wider range of chocolates from the median to the upper quartile, while the U.S.A has a wider range from the median to the lower quartile. All the locations have a max value the is around 4.0.
+
+### Of the three companies with the most rated chocolates, which has the highest ratings?
+```{r}
+compamy.num.ratings = choco %>% group_by(Company) %>% summarise(no_rows = length(Company))
+head(compamy.num.ratings[order(compamy.num.ratings$no_rows, decreasing=TRUE),])
+```
+```{r}
+choco3 = dplyr::filter(choco, Company %in% c("Soma", "Bonnat", "Fresco"))
+ggplot(data = choco3, aes(x=Rating, fill=Company)) + geom_boxplot()
+```
+
+All three of the companies with the most chocolate rated had a median value around 3.5. Soma has the largest percentage of their chocolate at or above a 3.5. However, Bonnat has the highest upper quartile, meaning they have a larger percentage of their chocolate with a rating of 4.
+
 # Work distrubution:
-Since Question set I was discussed in class already, we decided to split the rest of the problems, where we each do two. I will be doing the first two problems from question set ii and Nathan will do the third problem and wrote his own question.
+Since Question set I was discussed in class already, we decided to split the rest of the problems, where we each do two. I will be doing the first two problems from question set ii and Nathan will do the third problem and write his own question.
 
 
