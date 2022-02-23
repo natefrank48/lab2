@@ -65,6 +65,6 @@ ggplot(data = choco3, aes(x=Rating, fill=Company)) + geom_boxplot()
 All three of the companies with the most chocolate rated had a median value around 3.5. Soma has the largest percentage of their chocolate at or above a 3.5. However, Bonnat has the highest upper quartile, meaning they have a larger percentage of their chocolate with a rating of 4.
 
 # Work distrubution:
-Since Question set I was discussed in class already, we decided to split the rest of the problems, where we each do two. I will be doing the first two problems from question set ii and Nathan will do the third problem and write his own question.
+Since Question set I was discussed in class already, we decided to split the rest of the problems, where we each do two. I will be doing the first two problems from question set ii and Nathan will do the third problem and write his own question. Collaberating through GitHub worked well for us and gave us no issues.
 
 
